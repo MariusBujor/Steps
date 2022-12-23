@@ -40,3 +40,30 @@ body {
   max-width: 100%;
   width: 350px;
 }
+
+/* Building the line */
+/* Before */
+.progress-container::before {
+  content: "";
+  background-color: rgb(210, 210, 224);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+/* After line */
+.progress {
+  background-color: rgb(62, 62, 154);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 0%;
+  z-index: -1;
+  transition: 0.4s ease;
+}

@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
 
+:root {
+  --line-border-fill: rgb(62, 62, 154);
+  --line-border-empy: rgb(210, 210, 224);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -45,7 +50,7 @@ body {
 /* Before */
 .progress-container::before {
   content: "";
-  background-color: rgb(210, 210, 224);
+  background-color: var(--line-border-empy);
   position: absolute;
   top: 50%;
   left: 0;
@@ -57,7 +62,7 @@ body {
 }
 /* After line */
 .progress {
-  background-color: rgb(62, 62, 154);
+  background-color: var(--line-border-fill);
   position: absolute;
   top: 50%;
   left: 0;
@@ -66,4 +71,46 @@ body {
   width: 0%;
   z-index: -1;
   transition: 0.4s ease;
+}
+
+.circle {
+  background-color: #fff;
+  color: rgb(2, 46, 32);
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--line-border-empy);
+  transition: 0.4 ease;
+}
+
+.circle.active {
+  border-color: var(--line-border-fill);
+}
+
+.btn {
+  background-color: var(--line-border-fill);
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 8px 30px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:disabled {
+  background-color: var(--line-border-empy);
+  cursor: not-allowed;
 }
